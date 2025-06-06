@@ -27,7 +27,7 @@ jobs:
       run: |
         make build-pex
         mv autofaiss.pex autofaiss-${{ matrix.python-version }}.pex
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: autofaiss_pex
         path: autofaiss-${{ matrix.python-version }}.pex
@@ -42,7 +42,7 @@ jobs:
         text: ${{ github.event.head_commit.message }}
         regex: '^Release ([^ ]+)'
     - name: Download pex
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: autofaiss_pex
     - name: Set up Python
