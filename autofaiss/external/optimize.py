@@ -2,6 +2,7 @@
 import json
 import logging
 import re
+import numpy as np
 from functools import partial, reduce
 from math import floor, log2, sqrt
 from operator import mul
@@ -283,6 +284,19 @@ def get_optimal_quantization(
 
 
 T = TypeVar("T", int, float)
+
+
+class NumpyJSONEncoder(json.JSONEncoder):
+    """JSON encoder that can handle numpy types."""
+    
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super().default(obj)
 
 
 def get_min_param_value_for_best_neighbors_coverage(
@@ -569,6 +583,6 @@ def optimize_and_measure_index(
             with fsspec.open(index_path, "wb").open() as f:
                 faiss.write_index(index, faiss.PyCallbackIOWriter(f.write))
             with fsspec.open(index_infos_path, "w").open() as f:
-                json.dump(metric_infos, f)
+                json.dump(metric_infos, f, cls=NumpyJSONEncoder)
 
     return metric_infos
