@@ -116,10 +116,14 @@ def _add_index(
 def _get_pyspark_active_session():
     """Reproduce SparkSession.getActiveSession() available since pyspark 3.0."""
     import pyspark  # pylint: disable=import-outside-toplevel
-    import os
 
     # Set Java options to allow access to internal JDK classes for newer Java versions
-    os.environ['PYSPARK_SUBMIT_ARGS'] = '--conf spark.driver.extraJavaOptions="--add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED" --conf spark.executor.extraJavaOptions="--add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED" pyspark-shell'
+    java_opts = '--add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED'
+    os.environ['PYSPARK_SUBMIT_ARGS'] = (
+        f'--conf spark.driver.extraJavaOptions="{java_opts}" '
+        f'--conf spark.executor.extraJavaOptions="{java_opts}" '
+        'pyspark-shell'
+    )
 
     # pylint: disable=protected-access
     ss: Optional[pyspark.sql.SparkSession] = pyspark.sql.SparkSession._instantiatedSession  # mypy: ignore
