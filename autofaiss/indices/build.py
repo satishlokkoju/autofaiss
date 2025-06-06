@@ -1,4 +1,4 @@
-""" Common functions to build an index """
+"""Common functions to build an index"""
 
 import logging
 from typing import Dict, Optional, Tuple, Union, Callable, Any

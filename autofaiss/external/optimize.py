@@ -1,8 +1,8 @@
-""" Functions to find optimal index parameters """
+"""Functions to find optimal index parameters"""
+
 import json
 import logging
 import re
-import numpy as np
 from functools import partial, reduce
 from math import floor, log2, sqrt
 from operator import mul
@@ -288,14 +288,14 @@ T = TypeVar("T", int, float)
 
 class NumpyJSONEncoder(json.JSONEncoder):
     """JSON encoder that can handle numpy types."""
-    
-    def default(self, obj):
-        if isinstance(obj, np.integer):
-            return int(obj)
-        elif isinstance(obj, np.floating):
-            return float(obj)
-        elif isinstance(obj, np.ndarray):
-            return obj.tolist()
+
+    def default(self, o):
+        if isinstance(o, np.integer):
+            return int(o)
+        elif isinstance(o, np.floating):
+            return float(o)
+        elif isinstance(o, np.ndarray):
+            return o.tolist()
         return super().default(obj)
 
 
