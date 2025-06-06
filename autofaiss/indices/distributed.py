@@ -118,11 +118,11 @@ def _get_pyspark_active_session():
     import pyspark  # pylint: disable=import-outside-toplevel
 
     # Set Java options to allow access to internal JDK classes for newer Java versions
-    java_opts = '--add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED'
-    os.environ['PYSPARK_SUBMIT_ARGS'] = (
+    java_opts = "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED"
+    os.environ["PYSPARK_SUBMIT_ARGS"] = (
         f'--conf spark.driver.extraJavaOptions="{java_opts}" '
         f'--conf spark.executor.extraJavaOptions="{java_opts}" '
-        'pyspark-shell'
+        "pyspark-shell"
     )
 
     # pylint: disable=protected-access
