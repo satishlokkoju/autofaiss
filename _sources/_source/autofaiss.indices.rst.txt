@@ -1,0 +1,77 @@
+autofaiss.indices package
+=========================
+
+Submodules
+----------
+
+autofaiss.indices.build module
+------------------------------
+
+.. automodule:: autofaiss.indices.build
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.indices.distributed module
+------------------------------------
+
+.. automodule:: autofaiss.indices.distributed
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.indices.faiss\_index\_wrapper module
+----------------------------------------------
+
+.. automodule:: autofaiss.indices.faiss_index_wrapper
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.indices.index\_factory module
+---------------------------------------
+
+.. automodule:: autofaiss.indices.index_factory
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.indices.index\_utils module
+-------------------------------------
+
+.. automodule:: autofaiss.indices.index_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.indices.memory\_efficient\_flat\_index module
+-------------------------------------------------------
+
+.. automodule:: autofaiss.indices.memory_efficient_flat_index
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.indices.search module
+-------------------------------
+
+.. automodule:: autofaiss.indices.search
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.indices.training module
+---------------------------------
+
+.. automodule:: autofaiss.indices.training
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: autofaiss.indices
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,0 +1,61 @@
+autofaiss.external package
+==========================
+
+Submodules
+----------
+
+autofaiss.external.build module
+-------------------------------
+
+.. automodule:: autofaiss.external.build
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.external.descriptions module
+--------------------------------------
+
+.. automodule:: autofaiss.external.descriptions
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.external.metadata module
+----------------------------------
+
+.. automodule:: autofaiss.external.metadata
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.external.optimize module
+----------------------------------
+
+.. automodule:: autofaiss.external.optimize
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.external.quantize module
+----------------------------------
+
+.. automodule:: autofaiss.external.quantize
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+autofaiss.external.scores module
+--------------------------------
+
+.. automodule:: autofaiss.external.scores
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: autofaiss.external
+   :members:
+   :show-inheritance:
+   :undoc-members:
