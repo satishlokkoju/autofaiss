@@ -36,14 +36,6 @@ autofaiss.utils.decorators module
    :undoc-members:
    :show-inheritance:
 
-autofaiss.utils.json\_encoder module
-------------------------------------
-
-.. automodule:: autofaiss.utils.json_encoder
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 autofaiss.utils.path module
 ---------------------------
 
