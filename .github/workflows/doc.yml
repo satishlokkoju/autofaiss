@@ -3,10 +3,10 @@ name: Documentation generation
 on:
   push:
     branches:
-    - master
+    - mainline
   pull_request:
     branches:
-    - master
+    - mainline
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
       run: |
         cd docs && make venv-doc && cp -R _build/html ~/html && cd ..
     - name: Deploy doc
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/mainline'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"

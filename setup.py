@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     # Run setup
     setuptools.setup(
-        name="autofaiss",
+        name="autofaiss-community",
         version=metadata["version"],
         classifiers=[
             "License :: OSI Approved :: Apache Software License",
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         install_requires=_INSTALL_REQUIRES,
         tests_require=_TEST_REQUIRE,
         dependency_links=[],
-        entry_points={"console_scripts": ["autofaiss = autofaiss.external.quantize:main"]},
+        entry_points={"console_scripts": ["autofaiss-community = autofaiss.external.quantize:main"]},
         data_files=[(".", ["requirements.txt", "README.md"])],
         packages=setuptools.find_packages(),
         url="https://github.com/satishlokkoju/autofaiss",

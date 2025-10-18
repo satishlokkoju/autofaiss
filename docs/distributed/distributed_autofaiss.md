@@ -1,8 +1,8 @@
-# distributed autofaiss
+# distributed autofaiss-community
 
 If you want to generate an index from billion of embeddings, this guide is for you.
 
-This guide is about using pyspark to run autofaiss in multiple nodes.
+This guide is about using pyspark to run AutoFaiss Community in multiple nodes.
 
 You may also be interested by [distributed img2dataset](https://github.com/rom1504/img2dataset/blob/main/examples/distributed_img2dataset_tutorial.md)
 and [distributed clip inference](https://github.com/rom1504/clip-retrieval/blob/main/docs/distributed_clip_inference.md)
@@ -147,9 +147,9 @@ pkill java
 ```
 
 
-### Running autofaiss on it
+### Running AutoFaiss Community on it
 
-Once your spark cluster is setup, you're ready to start autofaiss in distributed mode.
+Once your spark cluster is setup, you're ready to start AutoFaiss Community in distributed mode.
 Make sure to open your spark UI, at http://localhost:8080 (or the ip where the master node is running)
 
 Save this script to indexing.py.
