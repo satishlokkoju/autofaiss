@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autofaiss getting started &mdash; autofaiss 1.0.0 documentation</title>
+  <title>AutoFaiss Community getting started &mdash; autofaiss-community 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
@@ -36,7 +36,7 @@
           
           
           <a href="../index.html" class="icon icon-home">
-            autofaiss
+            autofaiss-community
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -65,7 +65,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Getting started with notebooks</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Autofaiss getting started</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AutoFaiss Community getting started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Information">Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Parameters">Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Embeddings-creation-(add-your-own-embeddings-here)">Embeddings creation (add your own embeddings here)</a></li>
@@ -84,7 +84,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">autofaiss</a>
+          <a href="../index.html">autofaiss-community</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -92,7 +92,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Autofaiss getting started</li>
+      <li class="breadcrumb-item active">AutoFaiss Community getting started</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/autofaiss_getting_started.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -102,13 +102,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="Autofaiss-getting-started">
-<h1>Autofaiss getting started<a class="headerlink" href="#Autofaiss-getting-started" title="Link to this heading"></a></h1>
+  <section id="AutoFaiss-Community-getting-started">
+<h1>AutoFaiss Community getting started<a class="headerlink" href="#AutoFaiss-Community-getting-started" title="Link to this heading"></a></h1>
 <section id="Information">
 <h2>Information<a class="headerlink" href="#Information" title="Link to this heading"></a></h2>
 <p><strong>This Demo notebook automatically creates a Faiss knn indices with the most optimal similarity search parameters.</strong></p>
 <p>It selects the best indexing parameters to achieve the highest recalls given memory and query speed constraints.</p>
-<p>Github: <a class="reference external" href="https://github.com/criteo/autofaiss">https://github.com/criteo/autofaiss</a></p>
+<p>Github: <a class="reference external" href="https://github.com/satishlokkoju/autofaiss">https://github.com/satishlokkoju/autofaiss</a></p>
 </section>
 <section id="Parameters">
 <h2>Parameters<a class="headerlink" href="#Parameters" title="Link to this heading"></a></h2>
@@ -176,11 +176,11 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install autofaiss</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">autofaiss</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install autofaiss-community</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">autofaiss</span><span class="o">-</span><span class="n">community</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
 
 <span class="c1"># Build a KNN index</span>
-<span class="err">!</span><span class="n">autofaiss</span> <span class="n">build_index</span> <span class="o">--</span><span class="n">embeddings</span><span class="o">=</span><span class="p">{</span><span class="n">embeddings_dir</span><span class="p">}</span> \
+<span class="err">!</span><span class="n">autofaiss</span><span class="o">-</span><span class="n">community</span> <span class="n">build_index</span> <span class="o">--</span><span class="n">embeddings</span><span class="o">=</span><span class="p">{</span><span class="n">embeddings_dir</span><span class="p">}</span> \
                     <span class="o">--</span><span class="n">index_path</span><span class="o">=</span><span class="s2">&quot;knn.index&quot;</span> \
                     <span class="o">--</span><span class="n">index_infos_path</span><span class="o">=</span><span class="s2">&quot;infos.json&quot;</span> \
                     <span class="o">--</span><span class="n">metric_type</span><span class="o">=</span><span class="p">{</span><span class="n">metric_type</span><span class="p">}</span> \
@@ -265,7 +265,7 @@ Top 5 elements in the dataset for max inner product search:
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020, Criteo.</p>
+    <p>&#169; Copyright 2020, Criteo; 2023, Satish Lokkoju.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
