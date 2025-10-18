@@ -49,5 +49,5 @@ if __name__ == "__main__":
         entry_points={"console_scripts": ["autofaiss = autofaiss.external.quantize:main"]},
         data_files=[(".", ["requirements.txt", "README.md"])],
         packages=setuptools.find_packages(),
-        url="https://github.com/criteo/autofaiss",
+        url="https://github.com/satishlokkoju/autofaiss",
     )

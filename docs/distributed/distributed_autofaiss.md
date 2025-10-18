@@ -22,7 +22,7 @@ tar xf spark-3.2.1-bin-hadoop3.2.tgz
 Then download autofaiss:
 ```bash
 rm -rf autofaiss.pex
-wget https://github.com/criteo/autofaiss/releases/latest/download/autofaiss-3.8.pex -O autofaiss.pex
+wget https://github.com/satishlokkoju/autofaiss/releases/latest/download/autofaiss-3.8.pex -O autofaiss.pex
 chmod +x autofaiss.pex
 ```
 
@@ -98,7 +98,7 @@ Download autofaiss on all node by retrying this N times until parallel ssh says 
 ```bash
 
 parallel-ssh -i -h ips.txt "rm -rf autofaiss.pex"
-parallel-ssh -i -h ips.txt "wget https://github.com/criteo/autofaiss/releases/latest/download/autofaiss-3.8.pex -O autofaiss.pex"
+parallel-ssh -i -h ips.txt "wget https://github.com/satishlokkoju/autofaiss/releases/latest/download/autofaiss-3.8.pex -O autofaiss.pex"
 parallel-ssh -i -h ips.txt "chmod +x autofaiss.pex"
 ```
 
@@ -221,4 +221,3 @@ index, index_infos = build_index(
 
 Computing a 168GB multi pieces `OPQ24_168,IVF131072_HNSW32,PQ24x8` index on 5550336490 embeddings of dim 768 using 10 nodes with 16 cores (c6i.4xlarge) 
 takes 6h
-

@@ -19,8 +19,8 @@ sys.path.insert(0, os.path.abspath(".."))
 # -- Project information -----------------------------------------------------
 
 project = "autofaiss"
-copyright = "2020, Criteo"
-author = "Criteo reco team"
+copyright = "2020, Criteo; 2023, Satish Lokkoju"
+author = "Autofaiss Contributors"
 
 # The full version, including alpha/beta/rc tags
 release = "1.0.0"
