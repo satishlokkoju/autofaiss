@@ -157,7 +157,7 @@ print(list(zip(distances[0], indices[0])))
 To understand better why indices are selected and what are their characteristics, check the [index selection demo](https://colab.research.google.com/github/satishlokkoju/autofaiss/blob/mainline/docs/notebooks/autofaiss_index_selection_demo.ipynb)
 
 ## Command quick overview
-Quick description of the `autofaiss build_index` command:
+Quick description of the `autofaiss-community build_index` command:
 
 *embeddings*        -> Source path of the embeddings in numpy.  
 *index_path*                -> Destination path of the created index.
@@ -172,7 +172,7 @@ Quick description of the `autofaiss build_index` command:
 
 ## Command details
 
-The `autofaiss build_index` command takes the following parameters:
+The `autofaiss-community build_index` command takes the following parameters:
 
 | Flag available               |  Default     | Description                                                                                                                                                                                                                                               |
 |------------------------------|:------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

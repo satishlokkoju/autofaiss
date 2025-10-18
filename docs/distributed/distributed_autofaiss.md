@@ -19,11 +19,11 @@ wget https://archive.apache.org/dist/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2
 tar xf spark-3.2.1-bin-hadoop3.2.tgz
 ```
 
-Then download autofaiss:
+Then download autofaiss-community:
 ```bash
-rm -rf autofaiss.pex
-wget https://github.com/satishlokkoju/autofaiss/releases/latest/download/autofaiss-3.8.pex -O autofaiss.pex
-chmod +x autofaiss.pex
+rm -rf autofaiss-community.pex
+wget https://github.com/satishlokkoju/autofaiss/releases/latest/download/autofaiss-community-3.11.pex -O autofaiss-community.pex
+chmod +x autofaiss-community.pex
 ```
 
 If the master node cannot open ports that are visible from your local machine, you can do a tunnel between your local machine and the master node to be able to see the spark ui (at http://localhost:8080)
@@ -92,14 +92,14 @@ parallel-ssh -l $USER -i -h  ips.txt "sudo apt install openjdk-11-jre-headless l
 
 On aws, the master node and the worker nodes should be in same VPC and security group and allow inbound, so they can communicate.
 
-### Download autofaiss on all nodes
+### Download autofaiss-community on all nodes
 
-Download autofaiss on all node by retrying this N times until parallel ssh says success for all:
+Download autofaiss-community on all node by retrying this N times until parallel ssh says success for all:
 ```bash
 
-parallel-ssh -i -h ips.txt "rm -rf autofaiss.pex"
-parallel-ssh -i -h ips.txt "wget https://github.com/satishlokkoju/autofaiss/releases/latest/download/autofaiss-3.8.pex -O autofaiss.pex"
-parallel-ssh -i -h ips.txt "chmod +x autofaiss.pex"
+parallel-ssh -i -h ips.txt "rm -rf autofaiss-community.pex"
+parallel-ssh -i -h ips.txt "wget https://github.com/satishlokkoju/autofaiss/releases/latest/download/autofaiss-community-3.11.pex -O autofaiss-community.pex"
+parallel-ssh -i -h ips.txt "chmod +x autofaiss-community.pex"
 ```
 
 ### Download spark on workers
@@ -154,7 +154,7 @@ Make sure to open your spark UI, at http://localhost:8080 (or the ip where the m
 
 Save this script to indexing.py.
 
-Then run `./autofaiss.pex indexing.py`
+Then run `./autofaiss-community.pex indexing.py`
 
 ```python
 from autofaiss import build_index
@@ -165,7 +165,7 @@ from pyspark import SparkConf, SparkContext
 def create_spark_session():
     # this must be a path that is available on all worker nodes
     
-    os.environ['PYSPARK_PYTHON'] = "/home/ubuntu/autofaiss.pex"
+    os.environ['PYSPARK_PYTHON'] = "/home/ubuntu/autofaiss-community.pex"
     spark = (
         SparkSession.builder
         .config("spark.submit.deployMode", "client") \
