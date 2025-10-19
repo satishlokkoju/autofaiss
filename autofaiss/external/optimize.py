@@ -14,7 +14,7 @@ from autofaiss.external.metadata import IndexMetadata, compute_memory_necessary_
 from autofaiss.external.scores import compute_fast_metrics
 from autofaiss.indices.index_utils import set_search_hyperparameters, speed_test_ms_per_query
 from autofaiss.utils.algorithms import discrete_binary_search
-from autofaiss.utils.cast import cast_memory_to_bytes
+from autofaiss.utils.cast import cast_memory_to_bytes, convert_numpy_types_to_python
 from autofaiss.utils.decorators import Timeit
 from embedding_reader import EmbeddingReader
 
@@ -569,6 +569,6 @@ def optimize_and_measure_index(
             with fsspec.open(index_path, "wb").open() as f:
                 faiss.write_index(index, faiss.PyCallbackIOWriter(f.write))
             with fsspec.open(index_infos_path, "w").open() as f:
-                json.dump(metric_infos, f)
+                json.dump(convert_numpy_types_to_python(metric_infos), f)
 
     return metric_infos

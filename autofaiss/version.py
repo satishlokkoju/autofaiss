@@ -1,7 +1,7 @@
 # pylint: disable=all
 
-__version__ = "2.17.0"
-__author__ = "Criteo"
+__version__ = "2.18.0"
+__author__ = "Criteo, Satish Lokkoju"
 
 
 MAJOR = __version__.split(".")[0]

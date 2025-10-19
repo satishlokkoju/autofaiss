@@ -1,11 +1,12 @@
-""" function to cast variables in others """
+" function to cast variables in others "
 
-
+import numbers
 import re
 from math import floor
-from typing import Union
+from typing import Union, Any, Dict, List
 
 import faiss
+import numpy as np
 
 
 def cast_memory_to_bytes(memory_string: str) -> float:
@@ -86,3 +87,37 @@ def to_readable_time(seconds: float, rounding: bool = False) -> str:
     time_str += f"{seconds:.2f} seconds"
 
     return time_str
+
+
+def convert_numpy_types_to_python(obj: Any) -> Any:
+    """
+    Recursively convert numpy numeric types to native Python types for JSON serialization.
+
+    Parameters:
+    -----------
+    obj: Any
+        Object to convert. Can be dict, list, numpy scalar, or other types.
+
+    Returns:
+    --------
+    Any: Object with numpy types converted to Python types.
+    """
+    if isinstance(obj, np.ndarray):
+        # For arrays, convert to list (assuming 0-d or rarely used in JSON)
+        return obj.tolist()
+    elif isinstance(obj, (np.integer, np.int_)):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, (np.bool_, bool)):
+        return bool(obj)
+    elif isinstance(obj, (np.str_, str)):
+        return str(obj)
+    elif isinstance(obj, dict):
+        return {k: convert_numpy_types_to_python(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_numpy_types_to_python(item) for item in obj]
+    elif isinstance(obj, tuple):
+        return tuple(convert_numpy_types_to_python(item) for item in obj)
+    else:
+        return obj
