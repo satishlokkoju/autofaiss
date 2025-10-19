@@ -104,7 +104,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">autofaiss.external.scores</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_fast_metrics</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">autofaiss.indices.index_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_search_hyperparameters</span><span class="p">,</span> <span class="n">speed_test_ms_per_query</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">autofaiss.utils.algorithms</span><span class="w"> </span><span class="kn">import</span> <span class="n">discrete_binary_search</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">autofaiss.utils.cast</span><span class="w"> </span><span class="kn">import</span> <span class="n">cast_memory_to_bytes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">autofaiss.utils.cast</span><span class="w"> </span><span class="kn">import</span> <span class="n">cast_memory_to_bytes</span><span class="p">,</span> <span class="n">convert_numpy_types_to_python</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">autofaiss.utils.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timeit</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">embedding_reader</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmbeddingReader</span>
 
@@ -694,7 +694,7 @@
             <span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">index_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">faiss</span><span class="o">.</span><span class="n">write_index</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">faiss</span><span class="o">.</span><span class="n">PyCallbackIOWriter</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">))</span>
             <span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">index_infos_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">metric_infos</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">convert_numpy_types_to_python</span><span class="p">(</span><span class="n">metric_infos</span><span class="p">),</span> <span class="n">f</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">metric_infos</span></div>
 

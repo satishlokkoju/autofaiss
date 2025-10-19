@@ -184,6 +184,29 @@ True</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="autofaiss.utils.cast.convert_numpy_types_to_python">
+<span class="sig-prename descclassname"><span class="pre">autofaiss.utils.cast.</span></span><span class="sig-name descname"><span class="pre">convert_numpy_types_to_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/autofaiss/utils/cast.html#convert_numpy_types_to_python"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#autofaiss.utils.cast.convert_numpy_types_to_python" title="Link to this definition"></a></dt>
+<dd><p>Recursively convert numpy numeric types to native Python types for JSON serialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></span></p>
+</dd>
+</dl>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>obj: Any</dt><dd><p>Object to convert. Can be dict, list, numpy scalar, or other types.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns:<a class="headerlink" href="#returns" title="Link to this heading"></a></h3>
+<p>:
+Any: Object with numpy types converted to Python types.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="autofaiss.utils.cast.to_faiss_metric_type">
 <span class="sig-prename descclassname"><span class="pre">autofaiss.utils.cast.</span></span><span class="sig-name descname"><span class="pre">to_faiss_metric_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/autofaiss/utils/cast.html#to_faiss_metric_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#autofaiss.utils.cast.to_faiss_metric_type" title="Link to this definition"></a></dt>
 <dd><p>convert metric_type string/enum to faiss enum of the distance metric</p>
