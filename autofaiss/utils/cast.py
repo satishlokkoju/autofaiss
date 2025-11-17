@@ -1,9 +1,7 @@
 " function to cast variables in others "
-
-import numbers
 import re
 from math import floor
-from typing import Union, Any, Dict, List
+from typing import Union, Any
 
 import faiss
 import numpy as np
